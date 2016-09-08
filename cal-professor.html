@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+var a=0,b=0,j=0,t=0;
+
+function num(n)
+{ t=t*10+n;
+ document.f1.t1.value=t; }
+ 
+ function operator(n)
+ {
+	 a=t; t=0;j=n;
+ }
+function equal()
+{
+	if(j==1)
+	{ b=a+t;  document.f1.t1.value=b;	}
+	else if(j==2)
+	{ b=a-t; document.f1.t1.value=b; }
+	else if(j==3)
+	{ b=a*t; document.f1.t1.value=b;  }
+	else if(j==4)
+	{ b=a/t;document.f1.t1.value=b; }
+	t=0;
+}
+
+</script>
+</head>
+<body>
+<form name="f1">
+<table>
+<tr>
+<td colspan="4">
+<input type="text" name="t1" />
+</td>
+</tr>
+<tr>
+<td><input type="button" name="b1" value="1" onclick="num(1)" /></td>
+<td><input type="button" name="b2" value="2" onclick="num(2)"/></td>
+<td><input type="button" name="b3" value="3" onclick="num(3)"/></td>
+<td><input type="button" name="p" value="+" onclick="operator(1)"/></td>
+</tr>
+<tr>
+<td><input type="button" name="b4" value="4" onclick="num(4)"/></td>
+<td><input type="button" name="b5" value="5" onclick="num(5)"/></td>
+<td><input type="button" name="b6" value="6" onclick="num(6)"/></td>
+<td><input type="button" name="m" value="-" onclick="operator(2)"/></td>
+</tr>
+<tr>
+<td><input type="button" name="b7" value="7" onclick="num(7)"/></td>
+<td><input type="button" name="b8" value="8" onclick="num(8)"/></td>
+<td><input type="button" name="b9" value="9" onclick="num(9)"/></td>
+<td><input type="button" name="mul" value="x" onclick="operator(3)"/></td>
+</tr>
+<tr>
+<td><input type="button" name="dot" value="." /></td>
+<td><input type="button" name="b0" value="0" onclick="num(0)"/></td>
+<td><input type="button" name="eq" value="=" onclick="equal()" /></td>
+<td><input type="button" name="d" value="/" onclick="operator(4)" /></td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>
